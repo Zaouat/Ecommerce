@@ -13,7 +13,7 @@ class _PageSettingsState extends State<PageSettings> {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
-        SizedBox(height: 50,),
+        SizedBox(height: 50),
         new ListTile(
             leading: new Icon(
               Icons.language,
@@ -33,7 +33,7 @@ class _PageSettingsState extends State<PageSettings> {
             onTap: () {
 
             }),
-        SizedBox(height: 10,),
+
         new ListTile(
             leading: new Icon(
               Icons.brightness_4,
@@ -84,7 +84,6 @@ class _PageSettingsState extends State<PageSettings> {
             onTap: () {
 
             }),
-        SizedBox(height: 10,),
         new ListTile(
             leading: new Icon(
               Icons.fingerprint,
@@ -128,7 +127,6 @@ class _PageSettingsState extends State<PageSettings> {
             onTap: () {
 
             }),
-        SizedBox(height: 10,),
         new ListTile(
             leading: new Icon(
               Icons.history,

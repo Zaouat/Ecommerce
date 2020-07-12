@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:Ecommerce/pages/PageTemplate.dart';
+import 'package:Ecommerce/pages/Profile.dart';
 import 'package:Ecommerce/pages/Settings.dart';
+import 'package:Ecommerce/widgets/HomeCat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inner_drawer/inner_drawer.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -11,7 +13,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,7 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
         data: Theme.of(context).copyWith(
           canvasColor: Color(0xffCA1F3F),
           splashColor: Color(0xffFEBA01).withOpacity(0.5),
-          //other styles
         ),
         child: Drawer(
           elevation: 0,
@@ -157,6 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           MaterialPageRoute(
                               builder: (context) => PageTemplate(
                                     title: 'Profile',
+                                    bodyWidget: PageProfile(),
                                   )),
                         );
                       }),
@@ -316,48 +317,52 @@ class _MyHomePageState extends State<MyHomePage> {
         backdropEnabled: true,
         minHeight: 420,
         borderRadius: radius,
+        color: Color(0xffF2F5FC),
         maxHeight: MediaQuery.of(context).size.height,
-        panel: Container(),
+        panel: CatWidget(),
         body: Scaffold(
             extendBodyBehindAppBar: true,
-            appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              centerTitle: true,
-              automaticallyImplyLeading: false,
-              actions: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(top: 5),
-                  padding: EdgeInsets.only(left: 10, right: 10),
-                  width: MediaQuery.of(context).size.width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      IconButton(
-                          icon: Icon(
-                            Ionicons.ios_menu,
-                            color: Color(0xffFEBA01),
-                            size: 30,
-                          ),
-                          onPressed: () {
-                            _toggle();
-                          }),
-                      Text('Erupt.',
-                          style: TextStyle(
+            appBar: PreferredSize(
+              preferredSize: Size.fromHeight(70.0),
+              child: AppBar(
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                centerTitle: true,
+                automaticallyImplyLeading: false,
+                actions: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(top: 5),
+                    padding: EdgeInsets.only(left: 10, right: 10),
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        IconButton(
+                            icon: Icon(
+                              Ionicons.ios_menu,
                               color: Color(0xffFEBA01),
-                              fontFamily: 'Gilory',
-                              fontSize: 25)),
-                      IconButton(
-                          icon: Icon(
-                            Ionicons.ios_search,
-                            color: Color(0xffFEBA01),
-                            size: 30,
-                          ),
-                          onPressed: () {}),
-                    ],
+                              size: 30,
+                            ),
+                            onPressed: () {
+                              _toggle();
+                            }),
+                        Text('Erupt.',
+                            style: TextStyle(
+                                color: Color(0xffFEBA01),
+                                fontFamily: 'Gilory',
+                                fontSize: 25)),
+                        IconButton(
+                            icon: Icon(
+                              Ionicons.ios_search,
+                              color: Color(0xffFEBA01),
+                              size: 30,
+                            ),
+                            onPressed: () {}),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             body: Stack(
               children: <Widget>[
@@ -380,7 +385,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-
   final GlobalKey<InnerDrawerState> _innerDrawerKey =
       GlobalKey<InnerDrawerState>();
 

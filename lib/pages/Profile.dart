@@ -74,6 +74,7 @@ class _PageProfileState extends State<PageProfile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
+                          //Personal information
                           Padding(
                               padding: EdgeInsets.only(
                                   left: 25.0, right: 25.0, top: 25.0),
@@ -89,6 +90,7 @@ class _PageProfileState extends State<PageProfile> {
                                         'Personal Information',
                                         style: TextStyle(
                                             fontSize: 18.0,
+                                            color: Color(0xffCA1F3F),
                                             fontFamily: 'Gilory',
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -103,6 +105,8 @@ class _PageProfileState extends State<PageProfile> {
                                   )
                                 ],
                               )),
+                          SizedBox(height: 10,),
+                          //Name
                           Padding(
                               padding: EdgeInsets.only(
                                   left: 25.0, right: 25.0, top: 25.0),
@@ -150,6 +154,7 @@ class _PageProfileState extends State<PageProfile> {
                                   ),
                                 ],
                               )),
+                          //Email
                           Padding(
                               padding: EdgeInsets.only(
                                   left: 25.0, right: 25.0, top: 25.0),
@@ -344,6 +349,232 @@ class _PageProfileState extends State<PageProfile> {
                                   ),
                                 ],
                               )),
+                          SizedBox(height: 20,),
+                          //Cart information
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0, top: 25.0),
+                              child: new Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
+                                  new Column(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      new Text(
+                                        'Cart Information',
+                                        style: TextStyle(
+                                            fontSize: 18.0,
+                                            fontFamily: 'Gilory',
+                                            color:Color(0xffCA1F3F),
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
+                                  ),
+                                  new Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+                                      _status ? _getEditIcon() : new Container(),
+                                    ],
+                                  )
+                                ],
+                              )),
+                          SizedBox(height: 10,),
+                          //Credit card Number
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0, top: 25.0),
+                              child: new Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: <Widget>[
+                                    new Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        new Text(
+                                          'Credit card Number',
+                                          style: TextStyle(
+                                              fontSize: 16.0,
+                                              fontFamily: 'Gilory',
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ]
+                              )),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0),
+                              child: new Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
+                                  new Flexible(
+                                    child: new TextField(
+                                      style: TextStyle(fontFamily: 'GiloryL'),
+                                      decoration: const InputDecoration(
+                                        hintStyle:TextStyle(
+                                          fontFamily: 'GiloryL',
+                                        ),
+                                        hintText: "Your Credit card Number",
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(color: Color(0xffCA1F3F)),
+                                        ),
+                                      ),
+                                      cursorColor: Color(0xffCA1F3F),
+                                      enabled: !_status,
+                                      autofocus: !_status,
+
+                                    ),
+                                  ),
+                                ],
+                              )),
+                         //MM/YY
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0, top: 25.0),
+                              child: new Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: <Widget>[
+                                    new Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        new Text(
+                                          'MM/YY',
+                                          style: TextStyle(
+                                              fontSize: 16.0,
+                                              fontFamily: 'Gilory',
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ]
+                              )),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0),
+                              child: new Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
+                                  new Flexible(
+                                    child: new TextField(
+                                      style: TextStyle(fontFamily: 'GiloryL'),
+                                      decoration: const InputDecoration(
+                                        hintStyle:TextStyle(
+                                          fontFamily: 'GiloryL',
+                                        ),
+                                        hintText: "Your MM/YY",
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(color: Color(0xffCA1F3F)),
+                                        ),
+                                      ),
+                                      cursorColor: Color(0xffCA1F3F),
+                                      enabled: !_status,
+                                      autofocus: !_status,
+
+                                    ),
+                                  ),
+                                ],
+                              )),
+                          //CVV
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0, top: 25.0),
+                              child: new Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: <Widget>[
+                                    new Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        new Text(
+                                          'Cvv',
+                                          style: TextStyle(
+                                              fontSize: 16.0,
+                                              fontFamily: 'Gilory',
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ]
+                              )),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0),
+                              child: new Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
+                                  new Flexible(
+                                    child: new TextField(
+                                      style: TextStyle(fontFamily: 'GiloryL'),
+                                      decoration: const InputDecoration(
+                                        hintStyle:TextStyle(
+                                          fontFamily: 'GiloryL',
+                                        ),
+                                        hintText: "Your CVV",
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(color: Color(0xffCA1F3F)),
+                                        ),
+                                      ),
+                                      cursorColor: Color(0xffCA1F3F),
+                                      enabled: !_status,
+                                      autofocus: !_status,
+
+                                    ),
+                                  ),
+                                ],
+                              )),
+                          //Name on card
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0, top: 25.0),
+                              child: new Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: <Widget>[
+                                    new Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        new Text(
+                                          'Name on card',
+                                          style: TextStyle(
+                                              fontSize: 16.0,
+                                              fontFamily: 'Gilory',
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    ),
+                                  ]
+                              )),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  left: 25.0, right: 25.0),
+                              child: new Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: <Widget>[
+                                  new Flexible(
+                                    child: new TextField(
+                                      style: TextStyle(fontFamily: 'GiloryL'),
+                                      decoration: const InputDecoration(
+                                        hintStyle:TextStyle(
+                                          fontFamily: 'GiloryL',
+                                        ),
+                                        hintText: "Your name",
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(color: Color(0xffCA1F3F)),
+                                        ),
+                                      ),
+                                      cursorColor: Color(0xffCA1F3F),
+                                      enabled: !_status,
+                                      autofocus: !_status,
+
+                                    ),
+                                  ),
+                                ],
+                              )),
+
                           !_status ? _getActionButtons() : new Container(),
                         ],
                       ),

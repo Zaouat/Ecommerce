@@ -89,7 +89,7 @@ class _PageProfileState extends State<PageProfile> {
                                       new Text(
                                         'Personal Information',
                                         style: TextStyle(
-                                            fontSize: 18.0,
+                                            fontSize: 20.0,
                                             color: Color(0xffCA1F3F),
                                             fontFamily: 'Gilory',
                                             fontWeight: FontWeight.bold),
@@ -365,7 +365,7 @@ class _PageProfileState extends State<PageProfile> {
                                       new Text(
                                         'Cart Information',
                                         style: TextStyle(
-                                            fontSize: 18.0,
+                                            fontSize: 20.0,
                                             fontFamily: 'Gilory',
                                             color:Color(0xffCA1F3F),
                                             fontWeight: FontWeight.bold),

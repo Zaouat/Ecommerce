@@ -87,37 +87,54 @@ class _CatPostWidgetState extends State<CatWidget> {
                     ),
                   ),
                 ]),
-            body: Container(
-              height: 260,
-              child: TabBarView(
-                physics: NeverScrollableScrollPhysics(),
-                children: <Widget>[
-                  Container(
-                    child: Center(
-                        child: ListWidget()),
+            body: Column(
+              children: <Widget>[
+                Container(
+                  height: 270,
+                  child: TabBarView(
+                    physics: NeverScrollableScrollPhysics(),
+                    children: <Widget>[
+                      Container(
+                        child: Center(child: ListWidget()),
+                      ),
+                      Container(),
+                      Container(),
+                      Container(),
+                      Container(),
+                      Container(),
+                    ],
                   ),
-                  Container(
-                    child: Center(
-                        child: ListWidget()),
-                  ),
-                  Container(
-                    child: Center(
-                        child: ListWidget()),
-                  ),
-                  Container(
-                    child: Center(
-                        child: ListWidget()),
-                  ),
-                  Container(
-                    child: Center(
-                        child: ListWidget()),
-                  ),
-                  Container(
-                    child: Center(
-                        child: ListWidget()),
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(left: 20),
+                        child: Text('Trending',style: TextStyle(fontSize: 22,color:Color(0xffCA1F3F),fontFamily: 'Gilory'))) ,
+                    Container(
+                        margin: EdgeInsets.only(right: 20),
+                        child:
+                        GestureDetector(
+                          onTap: (){
+                           print("isclicked");
+                          },
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              child: Text('Show All', style: TextStyle(
+                                  color: Color(0xff1F2322).withOpacity(0.5),
+                                  fontSize: 15,
+                                  fontFamily: 'Gilory')),
+                              onTap: (){},
+                            ),
+                          ),
+                        )
+                    ),
+                  ],
+                ),
+
+              ],
             )),
       ),
     );

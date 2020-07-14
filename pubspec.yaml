@@ -16,7 +16,12 @@ dependencies:
   flutter_inner_drawer: "^0.5.6+1"
   flutter_icons: ^1.1.0
   sliding_up_panel: ^1.0.2
-
+  lottie: ^0.4.1
+  search_page:
+    git:
+      url: git://github.com/Zaouat/search_page.git
+  simple_search_bar:
+    git: git://github.com/elmissouri16/simples_search_bar.git
 
 
 
@@ -40,6 +45,7 @@ flutter:
   assets:
     - assets/images/cover.jpg
     - assets/images/avatar.jpg
+    - assets/like.json
     - assets/images/Vr.jpg
 
 

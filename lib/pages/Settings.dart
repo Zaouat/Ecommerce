@@ -8,7 +8,7 @@ class PageSettings extends StatefulWidget {
 }
 
 
-class _PageSettingsState extends State<PageSettings> {
+class _PageSettingsState extends State<PageSettings>{
 
   Widget build(BuildContext context) {
     return ListView(
@@ -141,7 +141,9 @@ class _PageSettingsState extends State<PageSettings> {
             ),
             onTap: () {
 
+
             }),
+
       ],
     );
   }

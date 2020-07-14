@@ -47,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
       onTapClose: true,
       leftOffset: 0.4,
       rightOffset: 0.6,
-      // DEPRECATED:  use scale
       leftScale: 0.9, // Will be removed in 0.6.0 version
       rightScale: 0.9, // Will be removed in 0.6.0 version
       scale: IDOffset.horizontal(0.8),
@@ -57,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       leftAnimationType: InnerDrawerAnimation.static, // default static
       backgroundDecoration: BoxDecoration(
         color: Color(0xffCA1F3F),
-      ), // default  Theme.of(context).backgroundColor
+      ),
       onDragUpdate: (double val, InnerDrawerDirection direction) {
         print(val);
         print(direction == InnerDrawerDirection.start);
@@ -320,7 +319,7 @@ class _MyHomePageState extends State<MyHomePage> {
         color: Color(0xffF2F5FC),
         maxHeight: MediaQuery.of(context).size.height,
         panel: CatWidget(),
-        body: Scaffold(
+        body:Scaffold(
             extendBodyBehindAppBar: true,
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(70.0),
@@ -361,7 +360,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     ),
                   ),
-                ],
+                    ],
               ),
             ),
             body: Stack(
@@ -385,8 +384,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
-  final GlobalKey<InnerDrawerState> _innerDrawerKey =
-      GlobalKey<InnerDrawerState>();
+  final GlobalKey<InnerDrawerState> _innerDrawerKey = GlobalKey<InnerDrawerState>();
 
   void _toggle() {
     _innerDrawerKey.currentState.toggle(direction: InnerDrawerDirection.start);

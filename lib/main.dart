@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:Ecommerce/pages/Login.dart';
 import 'package:Ecommerce/pages/PageTemplate.dart';
 import 'package:Ecommerce/pages/Profile.dart';
 import 'package:Ecommerce/pages/Settings.dart';
@@ -23,14 +24,12 @@ class MyApp extends StatelessWidget {
         splashColor: Color(0xffFEBA01).withOpacity(0.5),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -356,7 +355,13 @@ class _MyHomePageState extends State<MyHomePage> {
                               color: Color(0xffFEBA01),
                               size: 30,
                             ),
-                            onPressed: () {}),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()),
+                              );
+                            }),
                       ],
                     ),
                   ),
@@ -365,18 +370,47 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             body: Stack(
               children: <Widget>[
-                Text(
-                  'Collection 2020',
-                  style: TextStyle(
-                      color: Color(0xffFEBA01),
-                      fontFamily: 'Gilory',
-                      fontSize: 20),
-                ),
                 Container(
-                  height: MediaQuery.of(context).size.height - 380,
+                  height: MediaQuery.of(context).size.height - 300,
                   child: Image(
                     image: AssetImage('assets/images/cover.jpg'),
                     fit: BoxFit.cover,
+                  ),
+                ),
+                Center(
+                  child: Column(
+                    children: <Widget>[
+                     SizedBox(
+                       height: 130,
+                     ),
+                      Container(
+                        child: Text(
+                            'Collection 2020',
+                            style: TextStyle(
+                                color: Color(0xffFEBA01),
+                                fontFamily: 'Gilory',
+                                fontSize: 22),
+                          ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Erupt Gadgets',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Gilory',
+                              fontSize: 38),
+                        ),
+                      ),
+                      Container(
+                        child: Text(
+                          'Technical features including industry.',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'GiloryL',
+                              fontSize: 20),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

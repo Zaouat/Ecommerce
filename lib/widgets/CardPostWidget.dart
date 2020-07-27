@@ -1,3 +1,4 @@
+import 'package:Ecommerce/pages/Post.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -34,7 +35,7 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/Vr.jpg'),
+            image: AssetImage('assets/images/5.jpg'),
             fit: BoxFit.cover,
           ),
         ),
@@ -152,7 +153,13 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
                 ),
               ],
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Postpage()),
+              );
+            },
           ),
         ),
       ),

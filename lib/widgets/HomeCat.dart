@@ -105,33 +105,39 @@ class _CatPostWidgetState extends State<CatWidget> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(left: 20),
-                        child: Text('Trending',style: TextStyle(fontSize: 22,color:Color(0xffCA1F3F),fontFamily: 'Gilory'))) ,
+                    Row(
+                      children: <Widget>[
+                        Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: Text('Trending',style: TextStyle(fontSize: 22,color:Color(0xffCA1F3F),fontFamily: 'Gilory')),
+                        ),
+                      ],
+                    ) ,
                     Container(
                         margin: EdgeInsets.only(right: 20),
-                        child:
-                        GestureDetector(
-                          onTap: (){
-                           print("isclicked");
-                          },
-                          child: Material(
-                            color: Colors.transparent,
-                            child: InkWell(
-                              child: Text('Show All', style: TextStyle(
-                                  color: Color(0xff1F2322).withOpacity(0.5),
-                                  fontSize: 15,
-                                  fontFamily: 'Gilory')),
-                              onTap: (){},
-                            ),
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            child: Text('Show All', style: TextStyle(
+                                color: Color(0xff1F2322).withOpacity(0.5),
+                                fontSize: 15,
+                                fontFamily: 'Gilory')),
+                            onTap: (){
+                              //Show All trending
+                            },
                           ),
                         )
                     ),
                   ],
+                ),
+                SizedBox(height: 10),
+                Container(
+                  height: 270,
+                  child: Center(child: ListWidget()),
                 ),
 
               ],

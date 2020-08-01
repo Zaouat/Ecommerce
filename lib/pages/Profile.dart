@@ -14,6 +14,7 @@ class _PageProfileState extends State<PageProfile> {
     return Container(
           color: Colors.white,
           child: new ListView(
+            physics: BouncingScrollPhysics(),
             children: <Widget>[
               Column(
                 children: <Widget>[

@@ -1,11 +1,12 @@
 import 'package:Ecommerce/widgets/Imageview.dart';
+import 'package:Ecommerce/widgets/ListReviews.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_material_color_picker/flutter_material_color_picker.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-
+import 'package:badges/badges.dart';
 import 'PageTemplate.dart';
 import 'Sizechart.dart';
 
@@ -23,9 +24,29 @@ class Postpage extends StatefulWidget {
   _PagePost createState() => _PagePost();
 }
 
-class _PagePost extends State<Postpage> {
+class _PagePost extends State<Postpage> with TickerProviderStateMixin {
+   int addcart =0;
+  final List<Tab> Tabs = <Tab>[
+    Tab(text: "Latest"),
+    Tab(text: "First"),
+    Tab(text: "Upvoted"),
+  ];
+  TabController tabCont;
+
   bool selectedList = false;
   String dropdownValue = 'S';
+  @override
+  void initState() {
+    super.initState();
+    tabCont = new TabController(vsync: this, length: Tabs.length);
+  }
+
+  @override
+  void dispose() {
+    tabCont.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(
     BuildContext context,
@@ -37,15 +58,48 @@ class _PagePost extends State<Postpage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SlidingUpPanel(
-         minHeight: 35,
-        panel: Center(
-          child: Text("This is the sliding Widget"),
+        minHeight: 40,
+        panel: Column(
+          children: <Widget>[
+            Center(
+              child: Container(
+                alignment: Alignment.topCenter,
+                decoration: BoxDecoration(
+                    color: Color(0xffCA1F3F), borderRadius: radius),
+                height: 40,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      "Reviews (112)",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Gilory',
+                          fontSize: 17),
+                    ),
+                    IconButton(
+                      splashColor: Colors.transparent,
+                      onPressed: () {},
+                      icon: Icon(Icons.keyboard_arrow_down),
+                      color: Colors.white,
+                      iconSize: 25,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Container(
+                  color: Color(0xffCA1F3F),
+                  height: 460,
+                  child: ListReviewWidget()),
+            ),
+          ],
         ),
         collapsed: Container(
-          decoration: BoxDecoration(
-              color: Color(0xffCA1F3F),
-              borderRadius: radius
-          ),
+          decoration:
+              BoxDecoration(color: Color(0xffCA1F3F), borderRadius: radius),
           child: Center(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -53,13 +107,12 @@ class _PagePost extends State<Postpage> {
               children: <Widget>[
                 Text(
                   "Reviews (112)",
-                  style: TextStyle(color: Colors.white, fontFamily: 'Gilory',
-                    fontSize: 17
-                  ),
+                  style: TextStyle(
+                      color: Colors.white, fontFamily: 'Gilory', fontSize: 17),
                 ),
                 IconButton(
-                  onPressed: (){
-                  },
+                  splashColor: Colors.transparent,
+                  onPressed: () {},
                   icon: Icon(Icons.keyboard_arrow_up),
                   color: Colors.white,
                   iconSize: 25,
@@ -68,19 +121,27 @@ class _PagePost extends State<Postpage> {
             ),
           ),
         ),
-        body:CustomScrollView(
+        body: CustomScrollView(
           physics: BouncingScrollPhysics(),
           slivers: <Widget>[
             SliverAppBar(
               actions: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(right: 3),
+                  margin: EdgeInsets.only(right: 5),
                   child: IconButton(
-                      icon: Icon(
-                        Ionicons.md_basket,
-                        color: Color(0xffCA1F3F),
-                      ),
-                      onPressed: () {}),
+                        icon: Badge(
+                          badgeContent: Text(addcart.toString(),style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Gilory'
+                          ),),
+                          badgeColor:Color(0xffCA1F3F) ,
+                          child: Icon(
+                            Ionicons.md_basket,
+                            color: Color(0xffCA1F3F),
+                          ),
+                        ),
+                        onPressed: () {}),
+
                 )
               ],
               iconTheme: IconThemeData(color: Color(0xffCA1F3F)),
@@ -97,16 +158,15 @@ class _PagePost extends State<Postpage> {
                   ),
                   child: Swiper(
                     itemCount: _images.length,
-                    onTap: (img){
+                    onTap: (img) {
                       print("isclicked");
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => ImageWidget()),
+                        MaterialPageRoute(builder: (context) => ImageWidget()),
                       );
-
                     },
-                    itemBuilder: (BuildContext context, int index) => Image.asset(
+                    itemBuilder: (BuildContext context, int index) =>
+                        Image.asset(
                       _images[index],
                       fit: BoxFit.cover,
                     ),
@@ -127,7 +187,7 @@ class _PagePost extends State<Postpage> {
             ),
             SliverFillViewport(
               delegate: SliverChildBuilderDelegate(
-                    (context, index) {
+                (context, index) {
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -258,12 +318,16 @@ class _PagePost extends State<Postpage> {
                             width: 180,
                             decoration: ShapeDecoration(
                               shape: RoundedRectangleBorder(
-                                side: BorderSide(width: 1.5, style: BorderStyle.solid,color: Color(0xff1F2322).withOpacity(0.3)),
-                                borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                                side: BorderSide(
+                                    width: 1.5,
+                                    style: BorderStyle.solid,
+                                    color: Color(0xff1F2322).withOpacity(0.3)),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(5.0)),
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.only(left:10.0),
+                              padding: const EdgeInsets.only(left: 10.0),
                               child: Theme(
                                   data: ThemeData(
                                       canvasColor: Colors.white,
@@ -277,21 +341,20 @@ class _PagePost extends State<Postpage> {
                                     elevation: 16,
                                     iconEnabledColor: Color(0xffCA1F3F),
                                     style: TextStyle(
-                                        color: Color(0xffCA1F3F), fontSize: 16,fontFamily: 'Gilory'),
+                                        color: Color(0xffCA1F3F),
+                                        fontSize: 16,
+                                        fontFamily: 'Gilory'),
                                     underline: Text(''),
                                     value: dropdownValue,
-                                    items: <String>[
-                                      'S',
-                                      'M',
-                                      'L',
-                                      'XL',
-                                      'XXL'
-                                    ].map<DropdownMenuItem<String>>((String value) {
+                                    items: <String>['S', 'M', 'L', 'XL', 'XXL']
+                                        .map<DropdownMenuItem<String>>(
+                                            (String value) {
                                       return DropdownMenuItem<String>(
                                         value: value,
                                         child: Text(
                                           value,
-                                          style: TextStyle(color: Color(0xffCA1F3F)),
+                                          style: TextStyle(
+                                              color: Color(0xffCA1F3F)),
                                         ),
                                       );
                                     }).toList(),
@@ -318,11 +381,16 @@ class _PagePost extends State<Postpage> {
                                 child: FlatButton(
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(5.0),
-                                      side: BorderSide(color: Color(0xffCA1F3F))),
+                                      side:
+                                          BorderSide(color: Color(0xffCA1F3F))),
                                   color: Colors.white,
                                   textColor: Color(0xffCA1F3F),
                                   padding: EdgeInsets.all(8.0),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    setState(() {
+                                      addcart=addcart+1;
+                                    });
+                                  },
                                   child: Text(
                                     "Add to Cart".toUpperCase(),
                                     style: TextStyle(
@@ -340,22 +408,20 @@ class _PagePost extends State<Postpage> {
                                 child: RaisedButton(
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(5.0),
-                                      side: BorderSide(color: Color(0xffCA1F3F))),
+                                      side:
+                                          BorderSide(color: Color(0xffCA1F3F))),
                                   onPressed: () {},
                                   color: Color(0xffCA1F3F),
                                   textColor: Colors.white,
                                   child: Text("Buy now".toUpperCase(),
-                                      style: TextStyle(fontSize: 14,
-                                          fontFamily: 'Gilory'
-                                      )
-                                  ),
+                                      style: TextStyle(
+                                          fontSize: 14, fontFamily: 'Gilory')),
                                 ),
                               ),
                             ),
                           ],
                         ),
                       ),
-
                       SizedBox(
                         height: 25,
                       ),
@@ -365,7 +431,7 @@ class _PagePost extends State<Postpage> {
                             Expanded(
                               child: Container(
                                 width: 150,
-                                child:  Text(
+                                child: Text(
                                   'Product Details',
                                   style: TextStyle(
                                       color: Color(0xff1F2322).withOpacity(0.7),
@@ -387,14 +453,14 @@ class _PagePost extends State<Postpage> {
                                     fontSize: 16,
                                     fontFamily: 'Gilory'),
                               ),
-                              onTap: (){
+                              onTap: () {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => PageTemplate(
-                                        title: 'Fit & Size Chart',
-                                        bodyWidget: SizechartPage(),
-                                      )),
+                                            title: 'Fit & Size Chart',
+                                            bodyWidget: SizechartPage(),
+                                          )),
                                 );
                                 //Size chart
                               },
@@ -412,23 +478,26 @@ class _PagePost extends State<Postpage> {
                           ),
                           Expanded(
                               child: RichText(
-                                text: new TextSpan(
-                                  children: <TextSpan>[
-                                    new TextSpan(
-                                      text: 'Material : ',
-                                      style:TextStyle(
-                                          color: Color(0xff1F2322).withOpacity(0.7),
-                                          fontSize: 18,
-                                          fontFamily: 'Gilory'),),
-                                    new TextSpan(text: 'Various materials can be used to weave a fabric. The most common are Cotton and Linen.',
-                                      style: TextStyle(
-                                          color: Color(0xff1F2322).withOpacity(0.5),
-                                          fontSize: 17,
-                                          fontFamily: 'Giloryl'),),
-                                  ],
+                            text: new TextSpan(
+                              children: <TextSpan>[
+                                new TextSpan(
+                                  text: 'Material : ',
+                                  style: TextStyle(
+                                      color: Color(0xff1F2322).withOpacity(0.7),
+                                      fontSize: 18,
+                                      fontFamily: 'Gilory'),
                                 ),
-                              )
-                          ),
+                                new TextSpan(
+                                  text:
+                                      'Various materials can be used to weave a fabric. The most common are Cotton and Linen.',
+                                  style: TextStyle(
+                                      color: Color(0xff1F2322).withOpacity(0.5),
+                                      fontSize: 17,
+                                      fontFamily: 'Giloryl'),
+                                ),
+                              ],
+                            ),
+                          )),
                         ],
                       ),
                       SizedBox(
@@ -441,26 +510,28 @@ class _PagePost extends State<Postpage> {
                           ),
                           Expanded(
                               child: RichText(
-                                text: new TextSpan(
-                                  children: <TextSpan>[
-                                    new TextSpan(
-                                      text: 'Size & Fit : ',
-                                      style:TextStyle(
-                                          color: Color(0xff1F2322).withOpacity(0.7),
-                                          fontSize: 18,
-                                          fontFamily: 'Gilory'),),
-                                    new TextSpan(text: 'One size larger is recommended.\t please check the size chart for further information.',
-                                      style: TextStyle(
-                                          color: Color(0xff1F2322).withOpacity(0.5),
-                                          fontSize: 17,
-                                          fontFamily: 'Giloryl'),),
-                                  ],
+                            text: new TextSpan(
+                              children: <TextSpan>[
+                                new TextSpan(
+                                  text: 'Size & Fit : ',
+                                  style: TextStyle(
+                                      color: Color(0xff1F2322).withOpacity(0.7),
+                                      fontSize: 18,
+                                      fontFamily: 'Gilory'),
                                 ),
-                              )
-                          ),
+                                new TextSpan(
+                                  text:
+                                      'One size larger is recommended.\t please check the size chart for further information.',
+                                  style: TextStyle(
+                                      color: Color(0xff1F2322).withOpacity(0.5),
+                                      fontSize: 17,
+                                      fontFamily: 'Giloryl'),
+                                ),
+                              ],
+                            ),
+                          )),
                         ],
                       ),
-
                     ],
                   );
                 },
@@ -469,10 +540,8 @@ class _PagePost extends State<Postpage> {
             ),
           ],
         ),
-
         borderRadius: radius,
       ),
-
     );
   }
 }

@@ -12,6 +12,7 @@ class _PageSettingsState extends State<PageSettings>{
 
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         SizedBox(height: 50),
         new ListTile(

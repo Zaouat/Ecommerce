@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 import 'ListCatWisget.dart';
 
@@ -111,8 +112,12 @@ class _CatPostWidgetState extends State<CatWidget> {
                   children: <Widget>[
                     Row(
                       children: <Widget>[
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Icon(Ionicons.md_bonfire,color: Color(0xffCA1F3F),size: 30,),
                         Container(
-                            margin: EdgeInsets.only(left: 20),
+                          margin: EdgeInsets.only(left: 5),
                             child: Text('Trending',style: TextStyle(fontSize: 22,color:Color(0xffCA1F3F),fontFamily: 'Gilory')),
                         ),
                       ],

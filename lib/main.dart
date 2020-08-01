@@ -1,8 +1,8 @@
 import 'dart:ui';
-import 'package:Ecommerce/pages/Login.dart';
 import 'package:Ecommerce/pages/PageTemplate.dart';
 import 'package:Ecommerce/pages/Profile.dart';
 import 'package:Ecommerce/pages/Settings.dart';
+import 'package:Ecommerce/widgets/Alert.dart';
 import 'package:Ecommerce/widgets/HomeCat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inner_drawer/inner_drawer.dart';
@@ -303,7 +303,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       onTap: () {
-                        setState(() {});
+                        showAlert(context);
                       }),
                 ]),
               )
@@ -356,11 +356,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               size: 30,
                             ),
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LoginPage()),
-                              );
+
                             }),
                       ],
                     ),
@@ -383,7 +379,7 @@ class _MyHomePageState extends State<MyHomePage> {
                      SizedBox(
                        height: 130,
                      ),
-                      Container(
+                      Center(
                         child: Text(
                             'Collection 2020',
                             style: TextStyle(
@@ -392,7 +388,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 fontSize: 22),
                           ),
                       ),
-                      Container(
+                      Center(
                         child: Text(
                           'Erupt Gadgets',
                           style: TextStyle(
@@ -401,7 +397,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               fontSize: 38),
                         ),
                       ),
-                      Container(
+                      Center(
                         child: Text(
                           'Technical features including industry.',
                           style: TextStyle(
@@ -424,3 +420,5 @@ class _MyHomePageState extends State<MyHomePage> {
     _innerDrawerKey.currentState.toggle(direction: InnerDrawerDirection.start);
   }
 }
+
+

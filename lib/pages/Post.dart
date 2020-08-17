@@ -1,15 +1,4 @@
-import 'package:Ecommerce/widgets/Imageview.dart';
-import 'package:Ecommerce/widgets/ListReviews.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutter_material_color_picker/flutter_material_color_picker.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:badges/badges.dart';
-import 'PageTemplate.dart';
-import 'Sizechart.dart';
-
+import 'package:Ecommerce/helpers/global.dart';
 
 final List<String> _images = [
   'assets/images/1.jpg',
@@ -26,20 +15,9 @@ class Postpage extends StatefulWidget {
 
 class _PagePost extends State<Postpage> with TickerProviderStateMixin {
    int addcart =0;
-  final List<Tab> Tabs = <Tab>[
-    Tab(text: "Latest"),
-    Tab(text: "First"),
-    Tab(text: "Upvoted"),
-  ];
   TabController tabCont;
-
   bool selectedList = false;
   String dropdownValue = 'S';
-  @override
-  void initState() {
-    super.initState();
-    tabCont = new TabController(vsync: this, length: Tabs.length);
-  }
 
   @override
   void dispose() {
@@ -134,7 +112,7 @@ class _PagePost extends State<Postpage> with TickerProviderStateMixin {
                               color: Colors.white,
                               fontFamily: 'Gilory'
                           ),),
-                          badgeColor:Color(0xffCA1F3F) ,
+                          badgeColor:Color(0xffCA1F3F),
                           child: Icon(
                             Ionicons.md_basket,
                             color: Color(0xffCA1F3F),
@@ -206,7 +184,7 @@ class _PagePost extends State<Postpage> with TickerProviderStateMixin {
                                   style: TextStyle(
                                       color: Color(0xff1F2322),
                                       fontSize: 26,
-                                      fontFamily: 'Gilory'),
+                                      ),
                                 ),
                               ),
                             ),

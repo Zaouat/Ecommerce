@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-
-import 'ListCatWisget.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class CatWidget extends StatefulWidget {
   _CatPostWidgetState createState() => _CatPostWidgetState();
@@ -28,7 +24,7 @@ class _CatPostWidgetState extends State<CatWidget> {
                     child: Container(
                       margin: EdgeInsets.only(left: 20),
                       child: Text(
-                        'Android',
+                        'T-Shirts',
                         style: TextStyle(
                             color: Color(0xff1F2322),
                             fontFamily: 'Gilory',
@@ -39,7 +35,7 @@ class _CatPostWidgetState extends State<CatWidget> {
                   ),
                   Tab(
                     child: Text(
-                      'Ios',
+                      'Hoodies',
                       style: TextStyle(
                           color: Color(0xff1F2322),
                           fontFamily: 'Gilory',
@@ -49,7 +45,7 @@ class _CatPostWidgetState extends State<CatWidget> {
                   ),
                   Tab(
                     child: Text(
-                      'VR',
+                      'Jackets & Coats',
                       style: TextStyle(
                           color: Color(0xff1F2322),
                           fontFamily: 'Gilory',
@@ -59,7 +55,7 @@ class _CatPostWidgetState extends State<CatWidget> {
                   ),
                   Tab(
                     child: Text(
-                      'Headphones',
+                      'Blazers',
                       style: TextStyle(
                           color: Color(0xff1F2322),
                           fontFamily: 'Gilory',
@@ -69,7 +65,7 @@ class _CatPostWidgetState extends State<CatWidget> {
                   ),
                   Tab(
                     child: Text(
-                      'Power banks',
+                      'Pants',
                       style: TextStyle(
                           color: Color(0xff1F2322),
                           fontFamily: 'Gilory',
@@ -79,7 +75,7 @@ class _CatPostWidgetState extends State<CatWidget> {
                   ),
                   Tab(
                     child: Text(
-                      'Gamers gadgets',
+                      'Shorts',
                       style: TextStyle(
                           color: Color(0xff1F2322),
                           fontFamily: 'Gilory',
@@ -115,28 +111,45 @@ class _CatPostWidgetState extends State<CatWidget> {
                         SizedBox(
                           width: 15,
                         ),
-                        Icon(Ionicons.md_bonfire,color: Color(0xffCA1F3F),size: 30,),
+                        Icon(
+                          Ionicons.md_bonfire,
+                          color: Color(0xffCA1F3F),
+                          size: 30,
+                        ),
                         Container(
                           margin: EdgeInsets.only(left: 5),
-                            child: Text('Trending',style: TextStyle(fontSize: 22,color:Color(0xffCA1F3F),fontFamily: 'Gilory')),
+                          child: Text('Trending',
+                              style: TextStyle(
+                                  fontSize: 22,
+                                  color: Color(0xffCA1F3F),
+                                  fontFamily: 'Gilory')),
                         ),
                       ],
-                    ) ,
+                    ),
                     Container(
                         margin: EdgeInsets.only(right: 20),
                         child: Material(
                           color: Colors.transparent,
                           child: InkWell(
-                            child: Text('Show All', style: TextStyle(
-                                color: Color(0xff1F2322).withOpacity(0.5),
-                                fontSize: 15,
-                                fontFamily: 'Gilory')),
-                            onTap: (){
+                            child: Text('Show All',
+                                style: TextStyle(
+                                    color: Color(0xff1F2322).withOpacity(0.5),
+                                    fontSize: 15,
+                                    decoration: TextDecoration.underline,
+                                    fontFamily: 'Gilory')),
+                            onTap: () {
                               //Show All trending
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PageTemplate(
+                                          title: 'Trending',
+                                          bodyWidget: TrendingPage(),
+                                        )),
+                              );
                             },
                           ),
-                        )
-                    ),
+                        )),
                   ],
                 ),
                 SizedBox(height: 10),
@@ -144,7 +157,6 @@ class _CatPostWidgetState extends State<CatWidget> {
                   height: 270,
                   child: Center(child: ListWidget()),
                 ),
-
               ],
             )),
       ),

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class PageTemplate extends StatelessWidget {
   final String title;

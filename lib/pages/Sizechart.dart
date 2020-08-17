@@ -1,9 +1,5 @@
-import 'package:Ecommerce/widgets/LadiesSize.dart';
-import 'package:Ecommerce/widgets/MenSize.dart';
-import 'package:Ecommerce/widgets/YouthSize.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+import 'package:Ecommerce/helpers/global.dart';
+
 
 class SizechartPage extends StatefulWidget {
   _SizePagetState createState() => _SizePagetState();

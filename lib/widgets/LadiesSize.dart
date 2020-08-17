@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class LadiesWidget extends StatefulWidget {
   _LadiesSizeWidgetState createState() => _LadiesSizeWidgetState();
@@ -7,9 +7,9 @@ class LadiesWidget extends StatefulWidget {
 class _LadiesSizeWidgetState extends State<LadiesWidget> {
   @override
   Widget build(
-      BuildContext context,
-      ) {
-    return  Column(
+    BuildContext context,
+  ) {
+    return Column(
       children: <Widget>[
         Center(
             child: Text("Shirts, Sweaters & Jackets",
@@ -26,7 +26,9 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
             color: Colors.white,
             child: Table(
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-              border: TableBorder.all(color: Color(0xff444444),),
+              border: TableBorder.all(
+                color: Color(0xff444444),
+              ),
               children: [
                 TableRow(
                     decoration: BoxDecoration(
@@ -41,9 +43,9 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                           color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
-
                       ),
-                      Text('NUMERIC SIZE',
+                      Text(
+                        'NUMERIC SIZE',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -51,7 +53,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text('BUST',
+                      Text(
+                        'BUST',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -59,7 +62,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text('WAIST',
+                      Text(
+                        'WAIST',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -67,7 +71,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text('HIP',
+                      Text(
+                        'HIP',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -76,51 +81,9 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         textAlign: TextAlign.center,
                       ),
                     ]),
-                TableRow(
-                    children: [
-                      Text('X-Small',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('2',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('34',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('26',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('36.5',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ]),
                 TableRow(children: [
-                  Text('Small',
+                  Text(
+                    'X-Small',
                     style: TextStyle(
                       fontSize: 18,
                       fontFamily: 'Gilory',
@@ -128,7 +91,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('4 - 6',
+                  Text(
+                    '2',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -136,7 +100,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('35 - 36',
+                  Text(
+                    '34',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -144,7 +109,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('27 - 28',
+                  Text(
+                    '26',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -152,7 +118,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('37.5 - 38.5',
+                  Text(
+                    '36.5',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -162,7 +129,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                   ),
                 ]),
                 TableRow(children: [
-                  Text('Medium',
+                  Text(
+                    'Small',
                     style: TextStyle(
                       fontSize: 18,
                       fontFamily: 'Gilory',
@@ -170,7 +138,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('8 - 10',
+                  Text(
+                    '4 - 6',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -178,7 +147,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('37 - 38',
+                  Text(
+                    '35 - 36',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -186,7 +156,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('29 - 30',
+                  Text(
+                    '27 - 28',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -194,7 +165,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('39.5 - 40.5',
+                  Text(
+                    '37.5 - 38.5',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -204,7 +176,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                   ),
                 ]),
                 TableRow(children: [
-                  Text('Large',
+                  Text(
+                    'Medium',
                     style: TextStyle(
                       fontSize: 18,
                       fontFamily: 'Gilory',
@@ -212,7 +185,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('12 - 14',
+                  Text(
+                    '8 - 10',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
@@ -220,30 +194,37 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('39.5 - 41',
+                  Text(
+                    '37 - 38',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('31.5 - 33',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '29 - 30',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('42 - 43.5',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '39.5 - 40.5',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
+                    textAlign: TextAlign.center,
+                  ),
                 ]),
                 TableRow(children: [
-                  Text('XL',
+                  Text(
+                    'Large',
                     style: TextStyle(
                       fontSize: 18,
                       fontFamily: 'Gilory',
@@ -251,37 +232,46 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('16 - 18',
+                  Text(
+                    '12 - 14',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('42.5 - 44.5',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '39.5 - 41',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('34.5 - 36.5',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '31.5 - 33',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('45 - 47',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '42 - 43.5',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
+                    textAlign: TextAlign.center,
+                  ),
                 ]),
                 TableRow(children: [
-                  Text('2XL',
+                  Text(
+                    'XL',
                     style: TextStyle(
                       fontSize: 18,
                       fontFamily: 'Gilory',
@@ -289,37 +279,46 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('20',
+                  Text(
+                    '16 - 18',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('46',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '42.5 - 44.5',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('38',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '34.5 - 36.5',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('48.5',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '45 - 47',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
+                    textAlign: TextAlign.center,
+                  ),
                 ]),
                 TableRow(children: [
-                  Text('3XL',
+                  Text(
+                    '2XL',
                     style: TextStyle(
                       fontSize: 18,
                       fontFamily: 'Gilory',
@@ -327,34 +326,89 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text('22',
+                  Text(
+                    '20',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('47.5',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '46',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('39.5',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '38',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
-                  Text('50',
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '48.5',
                     style: TextStyle(
                       fontSize: 15,
                       fontFamily: 'Gilory',
                       color: Color(0xff1F2322),
                     ),
-                    textAlign: TextAlign.center,),
+                    textAlign: TextAlign.center,
+                  ),
+                ]),
+                TableRow(children: [
+                  Text(
+                    '3XL',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '22',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '47.5',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '39.5',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '50',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ]),
               ],
             ),
@@ -375,7 +429,9 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
             color: Colors.white,
             child: Table(
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-              border: TableBorder.all(color: Color(0xff444444),),
+              border: TableBorder.all(
+                color: Color(0xff444444),
+              ),
               children: [
                 TableRow(
                     decoration: BoxDecoration(
@@ -390,9 +446,9 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                           color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
-
                       ),
-                      Text('30',
+                      Text(
+                        '30',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -400,7 +456,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text('32',
+                      Text(
+                        '32',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -408,7 +465,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text('33',
+                      Text(
+                        '33',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -416,7 +474,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text('34',
+                      Text(
+                        '34',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -424,7 +483,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      Text('35..',
+                      Text(
+                        '35..',
                         style: TextStyle(
                           fontSize: 15,
                           fontFamily: 'Gilory',
@@ -433,57 +493,62 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                         textAlign: TextAlign.center,
                       ),
                     ]),
-                TableRow(
-                    children: [
-                      Text('Hips',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('39 - 40',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('40 - 41',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('41 - 42',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('42 - 43',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text('43 - 44..',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontFamily: 'Gilory',
-                          color: Color(0xff1F2322),
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ]),
+                TableRow(children: [
+                  Text(
+                    'Hips',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '39 - 40',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '40 - 41',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '41 - 42',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '42 - 43',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    '43 - 44..',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: 'Gilory',
+                      color: Color(0xff1F2322),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ]),
               ],
             ),
           ),
@@ -505,7 +570,7 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
               children: <Widget>[
                 Container(
                   height: 180,
-                  width: MediaQuery.of(context).size.width/1.7,
+                  width: MediaQuery.of(context).size.width / 1.7,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage('assets/images/FittingGuidladies.png'),
@@ -524,14 +589,13 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                                 fontSize: 15,
                                 fontFamily: 'Gilory',
                                 color: Color(0xff1F2322))),
-                        Text("Place tape measure up under arms and measure the fullest part of the chest, keeping tape parallel to the floor.",
+                        Text(
+                          "Place tape measure up under arms and measure the fullest part of the chest, keeping tape parallel to the floor.",
                           style: TextStyle(
                               fontSize: 13,
                               fontFamily: 'Giloryl',
                               color: Color(0xff1F2322)),
-
                         ),
-
                         SizedBox(
                           height: 10,
                         ),
@@ -540,7 +604,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                                 fontSize: 15,
                                 fontFamily: 'Gilory',
                                 color: Color(0xff1F2322))),
-                        Text("Tape measure should be straight around waist where pant waistband normally sits.",
+                        Text(
+                          "Tape measure should be straight around waist where pant waistband normally sits.",
                           style: TextStyle(
                               fontSize: 13,
                               fontFamily: 'Giloryl',
@@ -554,7 +619,8 @@ class _LadiesSizeWidgetState extends State<LadiesWidget> {
                                 fontSize: 15,
                                 fontFamily: 'Gilory',
                                 color: Color(0xff1F2322))),
-                        Text("Standing with heels together and with tape parallel to the floor,measure the fullest part.",
+                        Text(
+                          "Standing with heels together and with tape parallel to the floor,measure the fullest part.",
                           style: TextStyle(
                               fontSize: 13,
                               fontFamily: 'Giloryl',

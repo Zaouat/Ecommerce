@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-
+import 'package:Ecommerce/helpers/global.dart';
 
 class PageProfile extends StatefulWidget {
   @override

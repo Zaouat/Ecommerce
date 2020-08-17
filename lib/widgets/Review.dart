@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class ReviewWidget extends StatefulWidget {
   _ReviewWidgetState createState() => _ReviewWidgetState();

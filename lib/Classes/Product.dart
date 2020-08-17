@@ -17,4 +17,5 @@ class Product {
 
   Product(this.id, this.title, this.price, this.colors, this.sizes, this.body,
       this.images, this.cat, this.saved, this.url, this.reviews);
+
 }

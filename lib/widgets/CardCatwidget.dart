@@ -1,10 +1,11 @@
 import 'package:Ecommerce/helpers/global.dart';
 
-class CardWidget extends StatefulWidget {
+class CardCatWidget extends StatefulWidget {
   _CardWidgetState createState() => _CardWidgetState();
 }
 
-class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
+class _CardWidgetState extends State<CardCatWidget>
+    with TickerProviderStateMixin {
   AnimationController _controller;
   bool isLiked = false;
   @override
@@ -22,13 +23,13 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0,
+      elevation: 2,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.0),
+        borderRadius: BorderRadius.circular(10.0),
       ),
       semanticContainer: true,
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      margin: EdgeInsets.only(right: 20),
+      margin: EdgeInsets.only(bottom: 20, left: 5, right: 5),
       child: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -58,8 +59,8 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
                   child: Lottie.asset(
                     'assets/like.json',
                     controller: _controller,
-                    height: 150,
-                    width: 150,
+                    height: 100,
+                    width: 100,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -67,9 +68,8 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
                   alignment: Alignment.topRight,
                   child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(30),
-                            bottomRight: Radius.circular(30)),
+                        borderRadius:
+                            BorderRadius.only(bottomLeft: Radius.circular(10)),
                         color: Colors.white,
                       ),
                       height: 40,
@@ -95,7 +95,7 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
                     children: <Widget>[
                       Container(
                         padding: EdgeInsets.only(top: 10),
-                        height: 60,
+                        height: 65,
                         color: Colors.white,
                         child: Column(
                           children: <Widget>[

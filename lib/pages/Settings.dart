@@ -1,15 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 
 
-class PageSettings extends StatefulWidget {
-  @override
-  _PageSettingsState createState() => _PageSettingsState();
-}
-
-
-class _PageSettingsState extends State<PageSettings>{
-
+class PageSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       physics: BouncingScrollPhysics(),
@@ -29,7 +22,7 @@ class _PageSettingsState extends State<PageSettings>{
             ),
             subtitle: Text('English',style: TextStyle(fontFamily: 'Gilory'),),
             trailing: IconButton(icon: Icon(
-              Icons.keyboard_arrow_down
+                Icons.keyboard_arrow_down
             ), onPressed: null),
             onTap: () {
 
@@ -37,7 +30,7 @@ class _PageSettingsState extends State<PageSettings>{
 
         new ListTile(
             leading: new Icon(
-              Icons.brightness_4,
+              Ionicons.ios_contrast,
               color:  Color(0xffCA1F3F),
             ),
             title: Text(
@@ -51,9 +44,9 @@ class _PageSettingsState extends State<PageSettings>{
             trailing: Switch(
               activeColor:Color(0xffCA1F3F) ,
               value: true,
-                 onChanged: (value){
-                 },
-             ),
+              onChanged: (value){
+              },
+            ),
             onTap: () {
 
             }),
@@ -66,7 +59,7 @@ class _PageSettingsState extends State<PageSettings>{
         ),
         new ListTile(
             leading: new Icon(
-              Icons.phonelink_lock,
+              Ionicons.ios_lock,
               color:  Color(0xffCA1F3F),
             ),
             title: Text(
@@ -87,7 +80,7 @@ class _PageSettingsState extends State<PageSettings>{
             }),
         new ListTile(
             leading: new Icon(
-              Icons.fingerprint,
+              Ionicons.ios_finger_print,
               color:  Color(0xffCA1F3F),
             ),
             title: Text(
@@ -115,7 +108,7 @@ class _PageSettingsState extends State<PageSettings>{
         ),
         new ListTile(
             leading: new Icon(
-              Icons.insert_drive_file,
+              Ionicons.ios_document,
               color:  Color(0xffCA1F3F),
             ),
             title: Text(
@@ -141,8 +134,6 @@ class _PageSettingsState extends State<PageSettings>{
                   fontSize: 18),
             ),
             onTap: () {
-
-
             }),
 
       ],

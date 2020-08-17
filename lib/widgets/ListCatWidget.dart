@@ -1,5 +1,4 @@
-import 'package:Ecommerce/widgets/CardPostWidget.dart';
-import 'package:flutter/material.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class ListWidget extends StatefulWidget {
   _CatListWidgetState createState() => _CatListWidgetState();
@@ -17,7 +16,7 @@ class _CatListWidgetState extends State<ListWidget> {
             left: 15, right: 15, bottom: 15, top: 15),
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int i) {
-          return CardWidget();
+          return i==6? EndofList():CardWidget();
         });
   }
 }

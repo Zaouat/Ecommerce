@@ -1,7 +1,4 @@
-import 'package:Ecommerce/pages/Login.dart';
-import 'package:flutter/material.dart';
-import 'package:material_dialog/material_dialog.dart';
-
+import 'package:Ecommerce/helpers/global.dart';
 
 void showAlert(BuildContext context) async {
   await showDialog(
@@ -12,9 +9,7 @@ void showAlert(BuildContext context) async {
           content: Text(
             'Are you sure to logout ?',
             style: TextStyle(
-                color: Color(0xff1F2322),
-                fontSize: 20,
-                fontFamily: 'Gilory'),
+                color: Color(0xff1F2322), fontSize: 20, fontFamily: 'Gilory'),
             textAlign: TextAlign.center,
           ),
           children: <Widget>[

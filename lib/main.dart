@@ -1,8 +1,4 @@
-import 'dart:ui';
-import 'package:Ecommerce/responsive/views_home/home_view_mobile.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/material.dart';
-
+import 'package:Ecommerce/helpers/global.dart';
 
 void main() {
   runApp(
@@ -43,5 +39,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

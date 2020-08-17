@@ -10,6 +10,7 @@ export 'package:material_dialog/material_dialog.dart';
 export 'package:lottie/lottie.dart';
 export 'package:photo_view/photo_view.dart';
 export 'package:photo_view/photo_view_gallery.dart';
+export 'package:device_preview/device_preview.dart';
 
 //Pages
 export '../responsive/views_home/home_view_mobile.dart';

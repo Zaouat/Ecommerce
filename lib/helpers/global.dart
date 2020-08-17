@@ -11,9 +11,11 @@ export 'package:lottie/lottie.dart';
 export 'package:photo_view/photo_view.dart';
 export 'package:photo_view/photo_view_gallery.dart';
 export 'package:device_preview/device_preview.dart';
+export 'package:flutter_inner_drawer/inner_drawer.dart';
 
 //Pages
 export '../responsive/views_home/home_view_mobile.dart';
+export '../responsive/views_home/home_view.dart';
 export '../pages/Categories.dart';
 export '../pages/Category.dart';
 export '../pages/CreateAccount.dart';
@@ -23,6 +25,8 @@ export '../pages/Sizechart.dart';
 export '../pages/PageTemplate.dart';
 export '../pages/Post.dart';
 export '../pages/Trending.dart';
+export '../pages/Profile.dart';
+export '../pages/Settings.dart';
 
 //Widgets
 export '../widgets/CardCatwidget.dart';
@@ -35,6 +39,8 @@ export '../widgets/ListCatWidget.dart';
 export '../widgets/EndofList.dart';
 export '../widgets/Review.dart';
 export '../widgets/CardPostWidget.dart';
+export '../widgets/alert.dart';
+export '../widgets/HomeCat.dart';
 
 //Classes
 export '../responsive/orientation_layout.dart';

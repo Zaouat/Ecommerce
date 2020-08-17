@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:Ecommerce/pages/Categories.dart';
-import 'package:Ecommerce/pages/PageTemplate.dart';
-import 'package:Ecommerce/pages/Profile.dart';
-import 'package:Ecommerce/pages/Settings.dart';
-import 'package:Ecommerce/widgets/Alert.dart';
-import 'package:Ecommerce/widgets/HomeCat.dart';
-import 'package:flutter_inner_drawer/inner_drawer.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class HomeMobilePortrait extends StatefulWidget {
   @override
@@ -51,43 +42,41 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
             children: <Widget>[
               new DrawerHeader(
                   child: Column(
-                    children: <Widget>[
-                      Container(
-                        alignment: Alignment.topLeft,
-                        child: new IconButton(
-                            icon: Icon(
-                                Icons.close,
-                                color: iconThemeData.color,
-                                size: iconThemeData.size
-                            ),
-                            onPressed: () {
-                              _toggle();
-                            }),
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.topLeft,
+                    child: new IconButton(
+                        icon: Icon(Icons.close,
+                            color: iconThemeData.color,
+                            size: iconThemeData.size),
+                        onPressed: () {
+                          _toggle();
+                        }),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  new ListTile(
+                    title: Align(
+                      alignment: Alignment(-1.2, 0),
+                      child: RichText(
+                        text: TextSpan(
+                            text: 'Hello,\n',
+                            style: Theme.of(context).textTheme.headline6,
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: 'abdellah',
+                                style: TextStyle(
+                                  fontFamily: 'GiloryL',
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ]),
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      new ListTile(
-                        title: Align(
-                          alignment: Alignment(-1.2, 0),
-                          child: RichText(
-                            text: TextSpan(
-                                text: 'Hello,\n',
-                                style: Theme.of(context).textTheme.headline6,
-                                children: <TextSpan>[
-                                  TextSpan(
-                                    text: 'abdellah',
-                                    style: TextStyle(
-                                      fontFamily: 'GiloryL',
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ]),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )),
+                    ),
+                  ),
+                ],
+              )),
               new Container(
                 child: new Column(children: <Widget>[
                   new ListTile(
@@ -128,9 +117,9 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => PageTemplate(
-                                title: 'Profile',
-                                bodyWidget: PageProfile(),
-                              )),
+                                    title: 'Profile',
+                                    bodyWidget: PageProfile(),
+                                  )),
                         );
                       }),
                   new ListTile(
@@ -153,39 +142,41 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => PageTemplate(
-                                bodyWidget: PageCategories(),
-                                appBar: AppBar(
-                                  title: Text(
-                                    'Categories',
-                                    style: TextStyle(
-                                        fontFamily: "Gilory", fontSize: 25, color: Colors.white),
-                                  ) ,
-                                  centerTitle: true,
-                                  backgroundColor: Color(0xffCA1F3F),
-                                  elevation: 4,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.vertical(
-                                      bottom: Radius.circular(30),
+                                    bodyWidget: PageCategories(),
+                                    appBar: AppBar(
+                                      title: Text(
+                                        'Categories',
+                                        style: TextStyle(
+                                            fontFamily: "Gilory",
+                                            fontSize: 25,
+                                            color: Colors.white),
+                                      ),
+                                      centerTitle: true,
+                                      backgroundColor: Color(0xffCA1F3F),
+                                      elevation: 4,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          bottom: Radius.circular(30),
+                                        ),
+                                      ),
+                                      actions: <Widget>[
+                                        IconButton(
+                                            tooltip: 'Sort',
+                                            icon: Icon(
+                                              Ionicons.ios_options,
+                                              color: Colors.white,
+                                            ),
+                                            onPressed: () {}),
+                                        IconButton(
+                                            tooltip: 'Search',
+                                            icon: Icon(
+                                              Ionicons.ios_search,
+                                              color: Colors.white,
+                                            ),
+                                            onPressed: () {}),
+                                      ],
                                     ),
-                                  ),
-                                  actions: <Widget>[
-                                    IconButton(
-                                        tooltip: 'Sort',
-                                        icon: Icon(
-                                          Ionicons.ios_options,
-                                          color: Colors.white,
-                                        ),
-                                        onPressed: () {}),
-                                    IconButton(
-                                        tooltip: 'Search',
-                                        icon: Icon(
-                                          Ionicons.ios_search,
-                                          color: Colors.white,
-                                        ),
-                                        onPressed: () {}),
-                                  ],
-                                ),
-                              )),
+                                  )),
                         );
                       }),
                   new ListTile(
@@ -208,8 +199,8 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => PageTemplate(
-                                title: 'Cart',
-                              )),
+                                    title: 'Cart',
+                                  )),
                         );
                       }),
                   new ListTile(
@@ -232,8 +223,8 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => PageTemplate(
-                                title: 'Favorites',
-                              )),
+                                    title: 'Favorites',
+                                  )),
                         );
                       }),
                   new ListTile(
@@ -256,8 +247,8 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => PageTemplate(
-                                title: 'Help',
-                              )),
+                                    title: 'Help',
+                                  )),
                         );
                       }),
                   new ListTile(
@@ -280,9 +271,9 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => PageTemplate(
-                                title: 'Settings',
-                                bodyWidget: PageSettings(),
-                              )),
+                                    title: 'Settings',
+                                    bodyWidget: PageSettings(),
+                                  )),
                         );
                       }),
                   Divider(
@@ -340,25 +331,21 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-
                         IconButton(
                             tooltip: 'Menu',
-                            icon: Icon(
-                                Ionicons.ios_menu,
+                            icon: Icon(Ionicons.ios_menu,
                                 color: iconThemeData.color,
-                                size: iconThemeData.size
-                            ),
+                                size: iconThemeData.size),
                             onPressed: () {
                               _toggle();
                             }),
-                        Text('Erupt.', style: Theme.of(context).textTheme.headline5),
+                        Text('Erupt.',
+                            style: Theme.of(context).textTheme.headline5),
                         IconButton(
                             tooltip: 'Search',
-                            icon: Icon(
-                                Ionicons.ios_search,
+                            icon: Icon(Ionicons.ios_search,
                                 color: iconThemeData.color,
-                                size: iconThemeData.size
-                            ),
+                                size: iconThemeData.size),
                             onPressed: () {}),
                       ],
                     ),
@@ -416,7 +403,9 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
       ),
     );
   }
-  final GlobalKey<InnerDrawerState> _innerDrawerKey = GlobalKey<InnerDrawerState>();
+
+  final GlobalKey<InnerDrawerState> _innerDrawerKey =
+      GlobalKey<InnerDrawerState>();
 
   void _toggle() {
     _innerDrawerKey.currentState.toggle(direction: InnerDrawerDirection.start);

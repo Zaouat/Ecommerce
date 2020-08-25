@@ -50,12 +50,12 @@ class _EndListWidgetState extends State<EndofList>
                 Center(
                   child: Container(
                     margin: EdgeInsets.only(left: 15, right: 15, bottom: 15),
-                    child: Text("LOAD MORE",
+                    child: TextResponsive("LOAD MORE",
                         style: TextStyle(
                             color: Color(0xff1F2322).withOpacity(0.5),
                             fontFamily: 'Gilory',
                             decoration: TextDecoration.underline,
-                            fontSize: 15)),
+                            fontSize: 35)),
                   ),
                 ),
               ],

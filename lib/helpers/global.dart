@@ -12,6 +12,13 @@ export 'package:photo_view/photo_view.dart';
 export 'package:photo_view/photo_view_gallery.dart';
 export 'package:device_preview/device_preview.dart';
 export 'package:flutter_inner_drawer/inner_drawer.dart';
+export 'package:sliding_sheet/sliding_sheet.dart';
+export 'package:responsive_widgets/responsive_widgets.dart';
+export 'package:intro_slider/intro_slider.dart';
+export 'package:intro_slider/slide_object.dart';
+
+
+
 
 //Pages
 export '../responsive/views_home/home_view_mobile.dart';
@@ -27,6 +34,7 @@ export '../pages/Post.dart';
 export '../pages/Trending.dart';
 export '../pages/Profile.dart';
 export '../pages/Settings.dart';
+export '../pages/Intro.dart';
 
 //Widgets
 export '../widgets/CardCatwidget.dart';
@@ -41,7 +49,10 @@ export '../widgets/Review.dart';
 export '../widgets/CardPostWidget.dart';
 export '../widgets/alert.dart';
 export '../widgets/HomeCat.dart';
-
+export '../widgets/Drawer_widget.dart';
+export '../widgets/Drawer_item.dart';
+export '../widgets/Tab_item.dart';
+export '../widgets/HomeTrend.dart';
 //Classes
 export '../responsive/orientation_layout.dart';
 export '../responsive/ResponsiveBuilder.dart';
@@ -52,3 +63,5 @@ export '../utils/ui_utils.dart';
 export '../Classes/Category.dart';
 export '../Classes/Product.dart';
 export '../Classes/Reviews.dart';
+export '../helpers/declarations.dart';
+

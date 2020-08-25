@@ -1,11 +1,6 @@
 import 'package:Ecommerce/helpers/global.dart';
 
-class LadiesWidget extends StatefulWidget {
-  _LadiesSizeWidgetState createState() => _LadiesSizeWidgetState();
-}
-
-class _LadiesSizeWidgetState extends State<LadiesWidget> {
-  @override
+class LadiesWidget extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {

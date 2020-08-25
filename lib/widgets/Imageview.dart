@@ -8,12 +8,7 @@ final List<String> _images = [
   'assets/images/5.jpg'
 ];
 
-class ImageWidget extends StatefulWidget {
-  _ImageWidgetState createState() => _ImageWidgetState();
-}
-
-class _ImageWidgetState extends State<ImageWidget> {
-  @override
+class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,

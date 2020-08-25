@@ -29,7 +29,10 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
       semanticContainer: true,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       margin: EdgeInsets.only(right: 20),
-      child: Container(
+      child: ContainerResponsive(
+        width: 550,
+        widthResponsive: true,
+        //product image
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/5.jpg'),
@@ -51,105 +54,112 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
               });
             },
             child: Stack(
-              alignment: Alignment.center,
+              alignment: Alignment.topCenter,
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(bottom: 30),
-                  child: Lottie.asset(
-                    'assets/like.json',
-                    controller: _controller,
-                    height: 150,
-                    width: 150,
-                    fit: BoxFit.fill,
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 30),
+                    child: Lottie.asset(
+                      'assets/like.json',
+                      controller: _controller,
+                      height: 150,
+                      width: 150,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(30),
-                            bottomRight: Radius.circular(30)),
-                        color: Colors.white,
-                      ),
-                      height: 40,
-                      width: 40,
-                      child: isLiked == false
-                          ? new IconButton(
-                              icon: Icon(
-                                Ionicons.ios_heart_empty,
-                                color: Color(0xffCA1F3F),
-                              ),
-                              onPressed: null)
-                          : new IconButton(
-                              icon: Icon(
-                                Ionicons.ios_heart,
-                                color: Color(0xffCA1F3F),
-                              ),
-                              onPressed: null)),
-                ),
-                Container(
-                  width: 200,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.only(top: 10),
-                        height: 60,
-                        color: Colors.white,
-                        child: Column(
-                          children: <Widget>[
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                SizedBox(width: 10),
-                                Expanded(
-                                  child: new Text(
-                                    'Viscose shirt with two-tone print',
-                                    maxLines: 1,
-                                    softWrap: true,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(
-                                        color: Colors.grey,
-                                        fontSize: 16,
-                                        fontFamily: 'Gilory'),
-                                  ),
-                                ),
-                              ],
+                //like icon
+                ContainerResponsive(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(30),
+                          bottomRight: Radius.circular(30)),
+                      color: Colors.white,
+                    ),
+                    height: 120,
+                    width: 120,
+                    heightResponsive: true,
+                    widthResponsive: true,
+                    child: isLiked == false
+                        ? new IconButton(
+                            icon: Icon(
+                              Ionicons.ios_heart_empty,
+                              color: Color(0xffCA1F3F),
+                              size: 22,
                             ),
-                            SizedBox(
-                              height: 8,
+                            onPressed: null)
+                        : new IconButton(
+                            icon: Icon(
+                              Ionicons.ios_heart,
+                              color: Color(0xffCA1F3F),
+                              size: 22,
                             ),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                SizedBox(width: 10),
-                                Text(
-                                  "£32.12",
+                            onPressed: null)),
+                //title and price
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    ContainerResponsive(
+                      padding: EdgeInsetsResponsive.only(top: 25),
+                      height: 200,
+                      heightResponsive: true,
+                      color: Colors.white,
+                      child: Column(
+                        children: <Widget>[
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              SizedBoxResponsive(
+                                width: 35,
+                              ),
+                              Expanded(
+                                child: TextResponsive(
+                                  'Viscose shirt with two-tone print',
+                                  maxLines: 1,
+                                  softWrap: true,
+                                  overflow: TextOverflow.ellipsis,
                                   style: TextStyle(
-                                      color: Color(0xff1F2322),
-                                      fontSize: 15,
+                                      color: Colors.grey,
+                                      fontSize: 48,
                                       fontFamily: 'Gilory'),
                                 ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text(
-                                  "£41.12",
-                                  style: TextStyle(
-                                      color: Color(0xff1F2322).withOpacity(0.3),
-                                      fontSize: 15,
-                                      fontFamily: 'Gilory',
-                                      decoration: TextDecoration.lineThrough,
-                                      decorationColor: Colors.red),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              SizedBoxResponsive(
+                                width: 35,
+                              ),
+                              TextResponsive(
+                                "£32.12",
+                                style: TextStyle(
+                                    color: Color(0xff1F2322),
+                                    fontSize: 48,
+                                    fontFamily: 'Gilory'),
+                              ),
+                              SizedBoxResponsive(
+                                width: 20,
+                              ),
+                              TextResponsive(
+                                "£41.12",
+                                style: TextStyle(
+                                    color: Color(0xff1F2322).withOpacity(0.3),
+                                    fontSize: 48,
+                                    fontFamily: 'Gilory',
+                                    decoration: TextDecoration.lineThrough,
+                                    decorationColor: Colors.red),
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),

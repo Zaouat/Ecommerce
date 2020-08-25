@@ -1,11 +1,6 @@
 import 'package:Ecommerce/helpers/global.dart';
 
-class ReviewWidget extends StatefulWidget {
-  _ReviewWidgetState createState() => _ReviewWidgetState();
-}
-
-class _ReviewWidgetState extends State<ReviewWidget> {
-  @override
+class ReviewWidget extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
@@ -63,18 +58,22 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                   Text(
                     'April.01.2020',
                     style: TextStyle(
-                        color: Colors.white, fontFamily: 'Gilory', fontSize: 13),
+                        color: Colors.white,
+                        fontFamily: 'Gilory',
+                        fontSize: 13),
                   ),
                 ],
               ),
               Column(
                 children: <Widget>[
-              SizedBox(height: 10),
-              Text(
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                style: TextStyle(
-                    color: Colors.white, fontFamily: 'Gilory', fontSize: 13),
-              ),
+                  SizedBox(height: 10),
+                  Text(
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Gilory',
+                        fontSize: 13),
+                  ),
                   SizedBox(height: 5),
                 ],
               ),

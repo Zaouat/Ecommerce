@@ -1,21 +1,20 @@
-import 'package:flutter/widgets.dart';
-import 'package:Ecommerce/enums/device_screen_type.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class SizingInformation {
   final DeviceScreenType deviceScreenType;
   final Size screenSize;
   final Size localWidgetSize;
-  final String Sizename;
+  final String size;
 
   SizingInformation({
     this.deviceScreenType,
     this.screenSize,
     this.localWidgetSize,
-    this.Sizename,
+    this.size,
   });
 
   @override
   String toString() {
-    return ' DeviceType:$deviceScreenType ScreenSize:$screenSize LocalWidgetSize:$localWidgetSize';
+    return ' DeviceType:$deviceScreenType ScreenSize:$screenSize LocalWidgetSize:$localWidgetSize NameSize $size';
   }
 }

@@ -1,6 +1,4 @@
-import 'package:Ecommerce/Classes/Reviews.dart';
-
-import 'Category.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class Product {
   String id;

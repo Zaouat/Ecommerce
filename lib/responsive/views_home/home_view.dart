@@ -5,17 +5,24 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    ResponsiveWidgets.init(context,
+      height: 1920, // Optional
+      width: 1080, // Optional
+      allowFontScaling: true, // Optional
+    );
+    return ResponsiveWidgets.builder(
+      height: 1920, // Optional
+      width: 1080, // Optional
       child: ScreenTypeLayout(
         mobile: OrientationLayout(
           portrait: HomeMobilePortrait(),
         ),
-        tablet: OrientationLayout(
-         // portrait: HomeTabletPortrait(),
-        ),
-        desktop: OrientationLayout(
-        //  portrait: HomeDesktopPortrait(),
-        ),
+//        tablet: OrientationLayout(
+//         portrait: HomeTabletPortrait(),
+//        ),
+//        desktop: OrientationLayout(
+//         portrait: HomeDesktopPortrait(),
+//        ),
       ),
     );
   }

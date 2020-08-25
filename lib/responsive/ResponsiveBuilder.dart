@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'file:///C:/Users/abdellah/Documents/Flutter%20Project/flutter_app_responsivetest/lib/responsive/sizing_information.dart';
-import 'package:Ecommerce/utils/ui_utils.dart';
+import 'package:Ecommerce/helpers/global.dart';
 
 class ResponsiveBuilder extends StatelessWidget {
   final Widget Function(
@@ -9,18 +7,18 @@ class ResponsiveBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var mediaQuery = MediaQuery.of(context);
+    MediaQueryData mediaQuery = MediaQuery.of(context);
     name() {
-      String namesize;
-      if (mediaQuery.size.width >= 320 &&
-          mediaQuery.size.width >= 375 &&
-          mediaQuery.size.height > 500 &&
-          mediaQuery.size.height > 569) {
-        return namesize = "Large";
-      } else if (mediaQuery.size.width >= 360 &&mediaQuery.size.height >=740) {
-        return namesize = "Medium";
+        print(mediaQuery.size.width);
+      if (mediaQuery.size.width >= 320 && mediaQuery.size.width >= 375 && mediaQuery.size.height > 500 && mediaQuery.size.height > 569) {
+        print("Large");
+        return "Large";
+      } else if (mediaQuery.size.width >= 360 && mediaQuery.size.height >= 740) {
+        print("Medium");
+        return "Medium";
       } else
-        return namesize = "Small";
+        print("Small");
+        return "Small";
     }
 
     return LayoutBuilder(builder: (context, boxSizing) {
@@ -28,7 +26,7 @@ class ResponsiveBuilder extends StatelessWidget {
           deviceScreenType: getDeviceType(mediaQuery),
           screenSize: mediaQuery.size,
           localWidgetSize: Size(boxSizing.maxWidth, boxSizing.maxHeight),
-          Sizename: name());
+          size: name());
       return builder(context, sizingInformation);
     });
   }

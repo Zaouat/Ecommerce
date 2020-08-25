@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:Ecommerce/helpers/global.dart';
+
 
 class OrientationLayout extends StatelessWidget {
   final Widget landscape;

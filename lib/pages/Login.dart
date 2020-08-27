@@ -3,154 +3,160 @@ import 'package:Ecommerce/helpers/global.dart';
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    loginFields() => Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Container(
-            height: 80,
-            padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 30.0),
-            child: TextField(
-              style: TextStyle(
-                  color: Colors.white, fontFamily: 'GiloryL', fontSize: 18),
-              maxLines: 1,
-              cursorColor: Colors.white,
-              decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.person,
-                    color: Colors.white,
-                  ),
-                  border: OutlineInputBorder(
-                    // width: 0.0 produces a thin "hairline" border
-                    borderRadius: BorderRadius.all(Radius.circular(90.0)),
-                    borderSide: BorderSide.none,
-                    //borderSide: const BorderSide(),
-                  ),
-                  hintStyle: TextStyle(
-                      color: Colors.white, fontFamily: 'GiloryL', fontSize: 16),
-                  filled: true,
-                  contentPadding: EdgeInsets.only(top: 20),
-                  fillColor: Colors.white24,
-                  hintText: 'Username'
-              ),
-            ),
-          ),
-
-          Container(
-            height: 80,
-            padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 30.0),
-            child: TextField(
-              style: TextStyle(
-                  color: Colors.white, fontFamily: 'GiloryL', fontSize: 16),
-              maxLines: 1,
-              cursorColor: Colors.white,
-              obscureText: true,
-              decoration: InputDecoration(
-                  prefixIcon: Icon(
-                    Icons.lock,
-                    color: Colors.white,
-                  ),
-                  border: OutlineInputBorder(
-                    // width: 0.0 produces a thin "hairline" border
-                    borderRadius: BorderRadius.all(Radius.circular(90.0)),
-                    borderSide: BorderSide.none,
-                    //borderSide: const BorderSide(),
-                  ),
-                  hintStyle: TextStyle(
-                      color: Colors.white, fontFamily: 'GiloryL', fontSize: 18),
-                  filled: true,
-                  fillColor: Colors.white24,
-                  contentPadding: EdgeInsets.only(top: 20),
-                  hintText: 'Password'
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 25.0,
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 0.0, horizontal: 30.0),
-            width: MediaQuery.of(context).size.width - 80,
-            height: 45,
-            child: RaisedButton(
-              padding: EdgeInsets.all(12.0),
-              shape: StadiumBorder(),
-              child: Text(
-                "LOG IN",
-                style: TextStyle(color: Colors.white, fontFamily: 'Gilory'),
-              ),
-              color: Color(0xffCA1F3F),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => HomeMobilePortrait()),
-                );
-              },
-            ),
-          ),
-          SizedBox(
-            height: 30.0,
-          ),
-
-          Material(
-            color: Colors.transparent,
-            child: InkWell(
-              child: Text(
-                "SIGN UP FOR AN ACCOUNT",
-                style: TextStyle(color: Color(0xffCA1F3F), fontFamily: 'GiloryL'),
-              ),
-              onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => SignupPage()),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
+    ResponsiveWidgets.init(context,
+      height: 1920, // Optional
+      width: 1080, // Optional
+      allowFontScaling: true, // Optional
     );
-    loginHeader() => Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+    loginFields() => Column(
       children: <Widget>[
-        Center(
-          child: Container(
-            margin: EdgeInsets.only(bottom: 30),
-            height: 120,
-            child: Image(
-              image: AssetImage('assets/images/logo.png'),
+        //username field
+        ContainerResponsive(
+          height: 200,
+          heightResponsive: true,
+          widthResponsive: false,
+          width: MediaQuery.of(context).size.width-100,
+          child: TextField(
+            style: TextStyle(
+                color: Colors.white, fontFamily: 'GiloryL', fontSize: 18),
+            maxLines: 1,
+            cursorColor: Colors.white,
+            decoration: InputDecoration(
+                prefixIcon: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
+                border: OutlineInputBorder(
+                  // width: 0.0 produces a thin "hairline" border
+                  borderRadius: BorderRadius.all(Radius.circular(90.0)),
+                  borderSide: BorderSide.none,
+                  //borderSide: const BorderSide(),
+                ),
+                hintStyle: TextStyle(
+                    color: Colors.white, fontFamily: 'GiloryL', fontSize: 16),
+                filled: true,
+                contentPadding: EdgeInsets.only(top: 20),
+                fillColor: Colors.white24,
+                hintText: 'Username'
             ),
           ),
         ),
-        Text(
+        //password field
+        ContainerResponsive(
+          height: 200,
+          heightResponsive: true,
+          widthResponsive: false,
+          width: MediaQuery.of(context).size.width-100,
+          child: TextField(
+            style: TextStyle(
+                color: Colors.white, fontFamily: 'GiloryL', fontSize: 16),
+            maxLines: 1,
+            cursorColor: Colors.white,
+            obscureText: true,
+            decoration: InputDecoration(
+                prefixIcon: Icon(
+                  Icons.lock,
+                  color: Colors.white,
+                ),
+                border: OutlineInputBorder(
+                  // width: 0.0 produces a thin "hairline" border
+                  borderRadius: BorderRadius.all(Radius.circular(90.0)),
+                  borderSide: BorderSide.none,
+                  //borderSide: const BorderSide(),
+                ),
+                hintStyle: TextStyle(
+                    color: Colors.white, fontFamily: 'GiloryL', fontSize: 18),
+                filled: true,
+                fillColor: Colors.white24,
+                contentPadding: EdgeInsets.only(top: 20),
+                hintText: 'Password'
+            ),
+          ),
+        ),
+        ContainerResponsive(
+          height: 100.0,
+        ),
+        //login button
+        ContainerResponsive(
+          height: 120,
+          heightResponsive: true,
+          widthResponsive: false,
+          width: MediaQuery.of(context).size.width-150,
+          child: RaisedButtonResponsive(
+            padding: EdgeInsets.all(12.0),
+            shape: StadiumBorder(),
+            child: TextResponsive(
+              "LOG IN",
+              style: TextStyle(color: Colors.white, fontFamily: 'Gilory',fontSize: 35),
+            ),
+            color: Color(0xffCA1F3F),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => HomeMobilePortrait()),
+              );
+            },
+          ),
+        ),
+        SizedBoxResponsive(
+          height: 60.0,
+        ),
+        Material(
+          color: Colors.transparent,
+          child: InkWell(
+            child: TextResponsive(
+              "SIGN UP FOR AN ACCOUNT",
+              style: TextStyle(color: Color(0xffCA1F3F), fontFamily: 'GiloryL',fontSize: 40),
+            ),
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SignupPage()),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+    loginHeader() => Column(
+      children: <Widget>[
+        SizedBoxResponsive(
+          height: 100,
+        ),
+        Center(
+          child: ContainerResponsive(
+            margin: EdgeInsetsResponsive.only(bottom: 20),
+            height: 460,
+            width:460,
+            widthResponsive: true,
+            heightResponsive: true,
+            child: Image(
+              image: AssetImage('assets/icon & splash/splash.png'),
+            ),
+          ),
+        ),
+        TextResponsive(
           "Welcome to Erupt",
           style: TextStyle(
               fontWeight: FontWeight.w700,
               color: Color(0xffCA1F3F),
               fontFamily: 'Gilory',
-              fontSize: 30),
+              fontSize: 80),
         ),
-        SizedBox(
-          height: 5.0,
+        SizedBoxResponsive(
+          height: 15.0,
         ),
-        Text(
+        TextResponsive(
           "Sign in to continue",
           style: TextStyle(
-              color: Colors.white, fontFamily: 'GiloryL', fontSize: 20),
+              color: Colors.white, fontFamily: 'GiloryL', fontSize: 50),
         ),
-        SizedBox(
-          height: 20,
+        SizedBoxResponsive(
+          height: 160,
         )
       ],
-    );
-    loginBody() => SingleChildScrollView(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[loginHeader(), loginFields()],
-      ),
     );
     return Material(
       child: Container(
@@ -160,13 +166,9 @@ class LoginPage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                loginBody(),
-              ],
-            ),
+          child:ListView(
+            children: <Widget>[loginHeader(), loginFields()],
+          ),
           ),
     );
 

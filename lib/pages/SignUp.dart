@@ -4,39 +4,52 @@ import 'package:Ecommerce/helpers/global.dart';
 class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    signupHeader() => Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+    SignupHeader() => Column(
           children: <Widget>[
-            Text(
+            SizedBoxResponsive(
+              height: 100,
+            ),
+            Center(
+              child: ContainerResponsive(
+                margin: EdgeInsetsResponsive.only(bottom: 20),
+                height: 460,
+                width:460,
+                widthResponsive: true,
+                heightResponsive: true,
+                child: Image(
+                  image: AssetImage('assets/icon & splash/splash.png'),
+                ),
+              ),
+            ),
+            TextResponsive(
               "Sign Up",
               style: TextStyle(
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
                   fontFamily: 'Gilory',
-                  fontSize: 40),
+                  fontSize: 80),
             ),
-            SizedBox(
-              height: 5.0,
+            SizedBoxResponsive(
+              height: 15.0,
             ),
-            Text(
+            TextResponsive(
               "it's easier to sign up now",
               style: TextStyle(
-                  color: Colors.white, fontFamily: 'GiloryL', fontSize: 18),
+                  color: Colors.white, fontFamily: 'GiloryL', fontSize: 45),
             ),
-            SizedBox(
-              height: 120,
-            )
+            SizedBoxResponsive(
+              height: 150,
+            ),
           ],
         );
-    signupFields() => Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
+    SignupFields() => Column(
       children: <Widget>[
-        //using Fb
-        Container(
-          width: MediaQuery.of(context).size.width - 10,
-          height: 80,
-          padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 30.0),
+        //using Fb button
+        ContainerResponsive(
+          height: 120,
+          heightResponsive: true,
+          widthResponsive: false,
+          width: MediaQuery.of(context).size.width-100,
           child: FlatButton.icon(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(90.0),
@@ -46,22 +59,27 @@ class SignupPage extends StatelessWidget {
               icon: Icon(
                 Ionicons.logo_facebook,
                 color: Colors.white,
+                size:25
               ),
               label: Center(
-                child: Text(
+                child: TextResponsive(
                   'Continue with Facebook',
                   style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'GiloryL',
-                      fontSize: 18),
+                      fontSize: 45),
                 ),
               )),
         ),
-        //Using Email or phone
-        Container(
-          width: MediaQuery.of(context).size.width - 80,
-          height: 80,
-          padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 30.0),
+        SizedBoxResponsive(
+          height: 60.0,
+        ),
+        //Using Email or phone button
+        ContainerResponsive(
+          height: 120,
+          heightResponsive: true,
+          widthResponsive: false,
+          width: MediaQuery.of(context).size.width-150,
           child: FlatButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(90.0),
@@ -75,17 +93,17 @@ class SignupPage extends StatelessWidget {
                 );
               },
               child: Center(
-                child: Text(
+                child: TextResponsive(
                   "I'll use email or phone",
                   style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'GiloryL',
-                      fontSize: 18),
+                      fontSize: 45),
                 ),
               )),
         ),
-        SizedBox(
-          height: 50.0,
+        SizedBoxResponsive(
+          height: 120.0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -141,19 +159,19 @@ class SignupPage extends StatelessWidget {
                 )),
           ],
         ),
-        SizedBox(
-          height: 30.0,
+        SizedBoxResponsive(
+          height: 80.0,
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            TextResponsive(
               "Already have account? ",
               style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'GiloryL',
-                  fontSize: 16),
+                  fontSize: 45),
             ),
             Material(
               color: Colors.transparent,
@@ -165,12 +183,12 @@ class SignupPage extends StatelessWidget {
                         builder: (context) => LoginPage()),
                   );
                 },
-                child: Text(
+                child: TextResponsive(
                   'Login!',
                   style: TextStyle(
                     color: Color(0xffCA1F3F),
                     fontFamily: 'GiloryL',
-                    fontSize: 18,
+                    fontSize: 45,
                     decoration: TextDecoration.underline,
                   ),
                 ),
@@ -180,12 +198,6 @@ class SignupPage extends StatelessWidget {
         ),
       ],
     );
-    signupBody() => SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[signupHeader(), signupFields()],
-          ),
-        );
     return Stack(
       children: <Widget>[
         Material(
@@ -196,9 +208,10 @@ class SignupPage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: Center(
-               child: signupBody(),
-              )),
+              child:ListView(
+                children: <Widget>[ SignupHeader(), SignupFields()],
+              ),
+            ),
         ),
         Material(
           color: Colors.transparent,

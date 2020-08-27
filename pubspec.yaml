@@ -56,7 +56,6 @@ flutter:
     - assets/images/login.jpg
     - assets/images/women.jpg
     - assets/images/men.jpg
-    - assets/images/logo.png
     - assets/images/slider/explore.png
     - assets/images/slider/payment.png
     - assets/images/slider/shopping.png

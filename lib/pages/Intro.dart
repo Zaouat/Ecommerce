@@ -59,7 +59,7 @@ class _IntroState extends State<IntroPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => HomeView())
+          builder: (context) => LoginPage())
     );
 
   }

@@ -16,6 +16,8 @@ export 'package:sliding_sheet/sliding_sheet.dart';
 export 'package:responsive_widgets/responsive_widgets.dart';
 export 'package:intro_slider/intro_slider.dart';
 export 'package:intro_slider/slide_object.dart';
+export 'dart:async';
+export 'package:simple_search_bar/simple_search_bar.dart';
 
 
 
@@ -35,14 +37,15 @@ export '../pages/Trending.dart';
 export '../pages/Profile.dart';
 export '../pages/Settings.dart';
 export '../pages/Intro.dart';
+export '../pages/Search.dart';
 
 //Widgets
 export '../widgets/CardCatwidget.dart';
 export '../widgets/Imageview.dart';
 export '../widgets/ListReviews.dart';
-export '../widgets/YouthSize.dart';
-export '../widgets/MenSize.dart';
-export '../widgets/LadiesSize.dart';
+export '../widgets/Sizechart/YouthSize.dart';
+export '../widgets/Sizechart/MenSize.dart';
+export '../widgets/Sizechart/LadiesSize.dart';
 export '../widgets/ListCatWidget.dart';
 export '../widgets/EndofList.dart';
 export '../widgets/Review.dart';
@@ -53,6 +56,17 @@ export '../widgets/Drawer_widget.dart';
 export '../widgets/Drawer_item.dart';
 export '../widgets/Tab_item.dart';
 export '../widgets/HomeTrend.dart';
+export '../widgets/ProgressWidget.dart';
+export '../widgets/DropSizes.dart';
+export '../widgets/Sizechart/SizechartTable/Firstitem.dart';
+export '../widgets/Sizechart/SizechartTable/TableRowchart.dart';
+export '../widgets/Sizechart/SizechartTable/Seconditem.dart';
+export '../widgets/Sizechart/SizechartTable/image.dart';
+export '../widgets/Sizechart/SizechartTable/Lastitem.dart';
+
+
+
+
 //Classes
 export '../responsive/orientation_layout.dart';
 export '../responsive/ResponsiveBuilder.dart';

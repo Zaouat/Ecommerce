@@ -1,7 +1,7 @@
 import 'package:Ecommerce/helpers/global.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +16,7 @@ class HomeView extends StatelessWidget {
       child: ScreenTypeLayout(
         mobile: OrientationLayout(
           portrait: HomeMobilePortrait(),
+          landscape: HomeMobilePortrait(),
         ),
 //        tablet: OrientationLayout(
 //         portrait: HomeTabletPortrait(),

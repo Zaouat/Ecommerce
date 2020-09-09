@@ -27,7 +27,7 @@ class _SizePagetState extends State<SizechartPage>
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height+50;
+    double height = MediaQuery.of(context).size.height;
     return ListView(
       physics: BouncingScrollPhysics(),
       children: <Widget>[
@@ -39,11 +39,11 @@ class _SizePagetState extends State<SizechartPage>
             controller: tabController,
             tabs: myTabs,
         ),
-        SizedBox(
+        SizedBoxResponsive(
           height: 30,
         ),
         Container(
-          height: height+50,
+          height: height+250,
           child: TabBarView(
             controller: tabController,
             children: <Widget>[
@@ -53,9 +53,6 @@ class _SizePagetState extends State<SizechartPage>
             ],
           ),
         ),
-        Container(
-          height: 30,
-        )
       ],
     );
   }

@@ -12,6 +12,7 @@ class CatWidget extends StatelessWidget {
             child: Column(
               children: [
                 TabBar(
+                    physics: BouncingScrollPhysics(),
                     isScrollable: true,
                     unselectedLabelColor: Color(0xffCA1F3F),
                     indicatorColor: Color(0xffCA1F3F),

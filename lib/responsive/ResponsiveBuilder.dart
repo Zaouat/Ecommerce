@@ -9,7 +9,6 @@ class ResponsiveBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     MediaQueryData mediaQuery = MediaQuery.of(context);
     name() {
-        print(mediaQuery.size.width);
       if (mediaQuery.size.width >= 320 && mediaQuery.size.width >= 375 && mediaQuery.size.height > 500 && mediaQuery.size.height > 569) {
         print("Large");
         return "Large";

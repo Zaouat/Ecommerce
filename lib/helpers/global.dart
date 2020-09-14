@@ -63,6 +63,8 @@ export '../widgets/Sizechart/SizechartTable/TableRowchart.dart';
 export '../widgets/Sizechart/SizechartTable/Seconditem.dart';
 export '../widgets/Sizechart/SizechartTable/image.dart';
 export '../widgets/Sizechart/SizechartTable/Lastitem.dart';
+export '../widgets/CategoryItem.dart';
+export '../widgets/Item_list_cat.dart';
 
 
 

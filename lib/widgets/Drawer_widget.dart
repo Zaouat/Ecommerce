@@ -91,6 +91,14 @@ class DrawerWidget extends StatelessWidget {
                                   bottom: Radius.circular(30),
                                 ),
                               ),
+                              leading: IconButton(
+                                tooltip: 'Back',
+                                icon: Icon(Icons.arrow_back),
+                                color: Colors.white,
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
                               actions: <Widget>[
                                 IconButton(
                                     tooltip: 'Sort',

@@ -31,8 +31,8 @@ class _PagePost extends State<Postpage> with TickerProviderStateMixin {
     BuildContext context,
   ) {
     BorderRadiusGeometry radius = BorderRadius.only(
-      topLeft: Radius.circular(30.0),
-      topRight: Radius.circular(30.0),
+      topLeft: Radius.circular(20.0),
+      topRight: Radius.circular(20.0),
     );
     return ResponsiveBuilder(builder: (context, sizingInformation) {
       if (sizingInformation.size == "Large") {
@@ -52,7 +52,7 @@ class _PagePost extends State<Postpage> with TickerProviderStateMixin {
                 child: Container(
                   alignment: Alignment.topCenter,
                   decoration: BoxDecoration(
-                      color: Color(0xffCA1F3F), borderRadius: radius),
+                      color: Color(0xffCA1F3F),  borderRadius: radius),
                   height: 40,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -86,7 +86,7 @@ class _PagePost extends State<Postpage> with TickerProviderStateMixin {
           ),
           collapsed: Container(
             decoration:
-                BoxDecoration(color: Color(0xffCA1F3F), borderRadius: radius),
+                BoxDecoration(color: Color(0xffCA1F3F),  borderRadius: radius),
             child: Center(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -143,7 +143,7 @@ class _PagePost extends State<Postpage> with TickerProviderStateMixin {
                 flexibleSpace: FlexibleSpaceBar(
                   background: ClipRRect(
                     borderRadius: BorderRadius.vertical(
-                      bottom: Radius.circular(30),
+                      bottom: Radius.circular(20),
                     ),
                     child: Swiper(
                       itemCount: _images.length,

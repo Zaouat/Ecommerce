@@ -18,13 +18,13 @@ class PageCategories extends StatelessWidget {
           //Category
           CatItem(image: 'assets/images/women.jpg',title: "Women",description:'Lorem Ipsum is simply dummy text.'),
           SizedBox(height: 20),
-          CatItem(image: 'assets/images/women.jpg',title: "Men",description:'Lorem Ipsum is simply dummy text.'),
+          CatItem(image: 'assets/images/men.jpg',title: "Men",description:'Lorem Ipsum is simply dummy text.'),
           SizedBox(height: 20),
-          CatItem(image: 'assets/images/women.jpg',title: "Kids",description:'Lorem Ipsum is simply dummy text.'),
+          CatItem(image: 'assets/images/kids.jpg',title: "Kids",description:'Lorem Ipsum is simply dummy text.'),
           SizedBox(height: 20),
-          CatItem(image: 'assets/images/women.jpg',title: "Lifestyle",description:'Lorem Ipsum is simply dummy text.'),
+          CatItem(image: 'assets/images/lifestyle.jpg',title: "Lifestyle",description:'Lorem Ipsum is simply dummy text.'),
           SizedBox(height: 20),
-          CatItem(image: 'assets/images/women.jpg',title: "Gadgets",description:'Lorem Ipsum is simply dummy text.'),
+          CatItem(image: 'assets/images/gadget.jpg',title: "Gadgets",description:'Lorem Ipsum is simply dummy text.'),
         ],
       ),
     );

@@ -52,7 +52,7 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
           onTapClose: true, // Will be removed in 0.6.0 version
           scale: IDOffset.horizontal(0.8),
           proportionalChildArea: true, // default true
-          borderRadius: 30, // default 0
+          borderRadius: 20, // default 0
           leftAnimationType: InnerDrawerAnimation.static, // default static
           backgroundDecoration: BoxDecoration(
             color: Color(0xffCA1F3F),
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<HomeMobilePortrait> {
             backgroundColor: Colors.transparent,
             body: SlidingSheet(
               elevation: 0,
-              cornerRadius: 28,
+              cornerRadius: 20,
               snapSpec: SnapSpec(
                 snap: true,
                 snappings: [slidingSheet, heightSheet, double.infinity],

@@ -70,7 +70,7 @@ class _PageSearch extends State<PageSearch> {
                         items = snapshot.data['latest_posts'];
                         List<Product> searchData = List<Product>.from(items);
                         if (searchData.length != 0) {
-                          return CardCatWidget();
+                          return Container();
                         } else
                           return Center(
                             child: Column(

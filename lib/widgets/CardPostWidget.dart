@@ -28,7 +28,6 @@ class _CardWidgetState extends State<CardWidget> with TickerProviderStateMixin {
       ),
       semanticContainer: true,
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      margin: EdgeInsets.only(right: 20),
       child: ContainerResponsive(
         width: 550,
         widthResponsive: true,

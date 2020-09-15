@@ -128,6 +128,7 @@ class DrawerWidget extends StatelessWidget {
                   MaterialPageRoute(
                       builder: (context) => PageTemplate(
                             title: 'Cart',
+                             bodyWidget: Cart(),
                           )),
                 );
               }),

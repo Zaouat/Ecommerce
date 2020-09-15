@@ -6,17 +6,8 @@ class CreatAccPage extends StatelessWidget {
   Widget build(BuildContext context) {
     creatHeader() => Column(
       children: <Widget>[
-        Center(
-          child: ContainerResponsive(
-            margin: EdgeInsetsResponsive.only(bottom: 20),
-            height:360,
-            width:360,
-            widthResponsive: true,
-            heightResponsive: true,
-            child: Image(
-              image: AssetImage('assets/icon & splash/splash.png'),
-            ),
-          ),
+        SizedBoxResponsive(
+          height: 150,
         ),
         TextResponsive(
           "Sign Up",
@@ -27,7 +18,7 @@ class CreatAccPage extends StatelessWidget {
               fontSize: 80),
         ),
         SizedBoxResponsive(
-          height: 15.0,
+          height: 50.0,
         ),
         TextResponsive(
           "it's easier to sign up now",
@@ -35,7 +26,7 @@ class CreatAccPage extends StatelessWidget {
               color: Colors.white, fontFamily: 'GiloryL', fontSize: 45),
         ),
         SizedBoxResponsive(
-          height: 50,
+          height: 100,
         ),
       ],
     );
@@ -164,7 +155,7 @@ class CreatAccPage extends StatelessWidget {
           ),
         ),
         ContainerResponsive(
-          height: 100.0,
+          height: 200.0,
         ),
         ContainerResponsive(
           height: 120,

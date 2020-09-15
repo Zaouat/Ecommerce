@@ -38,9 +38,9 @@ export '../pages/Profile.dart';
 export '../pages/Settings.dart';
 export '../pages/Intro.dart';
 export '../pages/Search.dart';
+export '../pages/Cart.dart';
 
 //Widgets
-export '../widgets/CardCatwidget.dart';
 export '../widgets/Imageview.dart';
 export '../widgets/ListReviews.dart';
 export '../widgets/Sizechart/YouthSize.dart';
@@ -65,6 +65,9 @@ export '../widgets/Sizechart/SizechartTable/image.dart';
 export '../widgets/Sizechart/SizechartTable/Lastitem.dart';
 export '../widgets/CategoryItem.dart';
 export '../widgets/Item_list_cat.dart';
+export '../widgets/Cart/Current.dart';
+export '../widgets/Cart/History.dart';
+export '../widgets/Cart/CardCart.dart';
 
 
 
